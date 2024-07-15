@@ -10,7 +10,7 @@
         :key="product.id"
         :href="`https://www.enjoei.com.br/p/${product.slug}-${product.id}`"
       >
-        {{ product.title.name }}
+        {{ product.title }}
       </a>
     </vContainer>
   </div>
