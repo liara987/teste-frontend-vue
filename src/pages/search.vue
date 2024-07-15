@@ -18,11 +18,14 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
+  import {getProducts} from '../tools/get-products'
   import vContainer from '@/components/container.vue'
 
   const products = ref([])
 
   onMounted(() => {
-    fetch('/api/v5/users/enjoei-pro/products/liked?page=1&query=camisa')
+    getProducts()
+    .then(res => res.json())
+    .then(data => products.value = data.products)
   })
 </script>
