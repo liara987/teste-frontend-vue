@@ -44,12 +44,11 @@ $ yarn test
     - [x] preço
   - **Pode ter**
     - [x] desconto
+- [x] Loading
 - Pagination
 - SearchBar
   - ButtonCleanSearch
-  - ProductCount
-  - ProductNotFound
-- Skeleton
+  - ProductCount  
 
 ### Páginas
 
