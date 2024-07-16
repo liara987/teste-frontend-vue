@@ -10,6 +10,6 @@ describe('Search', () => {
   })
 
   it('requests products from the API', () => {
-    expect(fetch).toHaveBeenCalledWith('/api/v5/users/enjoei-pro/products/liked?page=1&query=camisa')
+    expect(fetch).toHaveBeenCalledWith('https://www.enjoei.com.br/api/v5/users/enjoei-pro/products/liked?page=1')
   })
 })

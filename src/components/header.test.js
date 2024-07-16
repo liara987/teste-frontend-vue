@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import vContainer from '@/components/container.vue'
+import vHeader from '@/components/header.vue'
 
-describe('Container', () => {
+describe('Header', () => {
   it('mounts', () => {
-    const wrapper = shallowMount(vContainer)
+    const wrapper = shallowMount(vHeader)
     expect(wrapper.vm).toBeTruthy()
   })
 })
