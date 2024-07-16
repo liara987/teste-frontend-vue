@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup(context)>
+<script setup>
 import LeftArrow from "../assets/arrow-left-icon.svg";
 import RightArrow from "../assets/arrow-right-icon.svg";
 
@@ -17,6 +17,7 @@ import RightArrow from "../assets/arrow-right-icon.svg";
 
 <style lang="scss">
 $layout-breakpoint-desktop: 1024px;
+
 .c-pagination {
   display: flex;
   justify-content: space-between;
