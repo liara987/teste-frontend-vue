@@ -95,8 +95,6 @@ $layout-breakpoint-desktop: 1024px;
     line-height: 12px;
 
     color: var(--color-gray-5);
-
-    // &__sale {
     em {
       color: var(--color-highlight);
       font-style: normal;
@@ -106,7 +104,6 @@ $layout-breakpoint-desktop: 1024px;
       font-weight: var(--font-weight-regular);
       color: var(--color-gray-4);
     }
-    // }
   }
 
   @media (min-width: $layout-breakpoint-desktop) {
