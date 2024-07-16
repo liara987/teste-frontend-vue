@@ -3,6 +3,7 @@
     <vHeader></vHeader>
 
     <vContainer :gutter="true">
+      <vLoading v-if="products.values.length > 0"></vLoading>
       <!-- <section class="product-search">
         <strong
           class="c-product-search__result-count"
@@ -21,12 +22,14 @@
             :imageId="product.image_public_id"
             :price="product.price.listed"
             :sale="product.price.sale"
+            :title="product.title"
+            path=""
           >
           </vProductCard>
         </a>
       </section>
 
-      <section class="pagination">
+      <section class="pagination" v-if="products.values.length > 0">
         <vPagination></vPagination>
       </section>
     </vContainer>
@@ -41,6 +44,7 @@ import vProductCard from "@/components/product-card.vue";
 import vPagination from "@/components/pagination.vue";
 
 import vHeader from "@/components/header.vue";
+import vLoading from "@/components/loading.vue";
 
 const products = ref([]);
 
@@ -49,7 +53,6 @@ onMounted(() => {
     .then((res) => res.json())
     .then((data) => (products.value = data.products));
 });
-
 </script>
 
 <style lang="scss">
