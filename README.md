@@ -37,17 +37,19 @@ $ yarn test
 
 ### Componentes
 
-- Navbar
-- Card:
-  - TEM
-    - imagem
-    - preço
-  - PODE TER
-    - desconto
-- SearchBar
-- Skeleton
+- [x] Navbar
+- [x] Card:
+  - **Tem**
+    - [x] imagem
+    - [x] preço
+  - **Pode ter**
+    - [x] desconto
 - Pagination
-- ButtonCleanSearch
+- SearchBar
+  - ButtonCleanSearch
+  - ProductCount
+  - ProductNotFound
+- Skeleton
 
 ### Páginas
 
