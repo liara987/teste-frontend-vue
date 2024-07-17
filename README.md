@@ -47,11 +47,15 @@ $ yarn test
 - [x] Loading
 - [x] Pagination
 - SearchBar
-  - ButtonCleanSearch
-  - ProductCount  
+  - [ ] Deve pegar oque o foi digitado
+  - [ ] Quando começar a digitar mostrar botão outlined de limpar campo
+  - [ ] Quand apertar no enter ou clickar no icone de lupa fazer a requisição na API
+  - [ ] Quando fazer a requisição mostrar quantos itens foram encontrados
+  - [ ] Se nenhum item for encontrado redirecionar para pagina de not found
+  - [ ] Quando clickar em limpar busca voltar para home
 
 ### Páginas
 
-- PageNotFound
+- [x] PageNotFound
 
 ### Testes unitários
