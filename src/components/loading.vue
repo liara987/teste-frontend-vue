@@ -18,12 +18,13 @@ function isDesktop() {
 
 onBeforeMount(() => {
   totalItems.value = computed(() => {
-    return isDesktop ? 26 : 6;
+    return isDesktop ? 28 : 6;
   });
 });
 </script>
 <style lang="scss">
 .c-loading {
+  $layout-breakpoint-tablet: 728px;
   $layout-breakpoint-desktop: 1024px;
 
   display: grid;
@@ -50,6 +51,10 @@ onBeforeMount(() => {
         background-position: left;
       }
     }
+  }
+
+  @media (min-width: $layout-breakpoint-tablet) {
+    grid-template-columns: repeat(4, 163px);
   }
 
   @media (min-width: $layout-breakpoint-desktop) {

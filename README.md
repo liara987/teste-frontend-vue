@@ -45,12 +45,13 @@ $ yarn test
   - **Pode ter**
     - [x] desconto
 - [x] Loading
-- Pagination
+- [x] Pagination
 - SearchBar
   - ButtonCleanSearch
   - ProductCount  
 
 ### Páginas
 
-- Home
 - PageNotFound
+
+### Testes unitários

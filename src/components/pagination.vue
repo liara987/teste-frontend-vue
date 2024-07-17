@@ -1,9 +1,9 @@
 <template>
   <div class="c-pagination">
-    <button class="c-pagination__prev">
+    <button class="c-pagination__prev" @click="prev()">
       <LeftArrow class="arrow" /> anterior
     </button>
-    <button class="c-pagination__next">
+    <button class="c-pagination__next" @click="next()">
       próxima <RightArrow class="arrow" />
     </button>
   </div>
@@ -13,6 +13,17 @@
 import LeftArrow from "../assets/arrow-left-icon.svg";
 import RightArrow from "../assets/arrow-right-icon.svg";
 
+const page = defineModel();
+
+function next() {
+  page.value++;
+}
+
+function prev() {
+  if (page.value > 1) {
+    page.value--;
+  }
+}
 </script>
 
 <style lang="scss">

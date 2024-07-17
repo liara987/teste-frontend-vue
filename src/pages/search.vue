@@ -3,7 +3,9 @@
     <vHeader></vHeader>
 
     <vContainer :gutter="true">
-      <vLoading v-if="products.values.length > 0"></vLoading>
+      <section class="loading" v-if="loading">
+        <vLoading></vLoading>
+      </section>
       <!-- <section class="product-search">
         <strong
           class="c-product-search__result-count"
@@ -12,7 +14,7 @@
           {{ products.lenght }} produtos encontrados</strong
         >
       </section> -->
-      <section class="product-list">
+      <section class="product-list" v-else>
         <a
           v-for="product in products"
           :key="product.id"
@@ -29,15 +31,15 @@
         </a>
       </section>
 
-      <section class="pagination" v-if="products.values.length > 0">
-        <vPagination></vPagination>
+      <section class="pagination" v-if="products.length > 0">
+        <vPagination v-model="pageNumber"></vPagination>
       </section>
     </vContainer>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch, watchEffect } from "vue";
 import { getProducts } from "../tools/get-products";
 import vContainer from "@/components/container.vue";
 import vProductCard from "@/components/product-card.vue";
@@ -47,12 +49,43 @@ import vHeader from "@/components/header.vue";
 import vLoading from "@/components/loading.vue";
 
 const products = ref([]);
+const pageNumber = ref(1);
+const loading = ref(false)
 
 onMounted(() => {
-  getProducts()
-    .then((res) => res.json())
-    .then((data) => (products.value = data.products));
+  const fetchData = () => {
+    getProducts(pageNumber.value)
+    .then((res) => {
+      if (res.ok) return res.json()
+      throw new Error("Algo deu errado")})
+    .then((data) => (products.value = data.products))
+    .catch((err) => (console.error(err)))
+    .finally(()=>loading.value = false)
+  }
+
+  watchEffect(() => {
+    loading.value = true
+    fetchData()
+  })
 });
+
+// watch(pageNumber, async (newPageNumber, oldQuestion) => {
+//   // loading.value = true
+//   if (newPageNumber !== pageNumber) {
+//     try {
+//       console.log(pageNumber.value)
+//       getProducts(pageNumber.value)
+//       .then((res) => {
+//         if (res.ok) return res.json()
+//         throw new Error("Algo deu errado")})
+//       .then((data) => (products.value = data.products))
+//     } catch (error) {
+//       console.error(error)
+//     } finally {
+//       loading.value = false
+//     }
+//   }
+// })
 </script>
 
 <style lang="scss">
