@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import vInstructions from '@/pages/instructions.vue'
 import vSearch from '@/pages/search.vue'
+import vProductNotFound from '@/pages/product-not-found.vue'
 
 const routes = [
   {
@@ -15,7 +16,15 @@ const routes = [
     meta: {
       seoTitle: 'Instruções'
     }
-  }
+  },
+  {
+    path: '/not-found',
+    name: 'ProductNotFound',
+    component: vProductNotFound,
+    meta: {
+      seoTitle: 'Instruções'
+    }
+  },
 ]
 
 export const router = createRouter({
