@@ -1,5 +1,5 @@
 <template>
-  <a class="c-product-card" :href="href">
+  <div class="c-product-card" :href="href">
     <img class="c-product-card__image" :src="imageUrl" />
     <span class="c-product-card__percentage" v-if="sale">
       <em> {{ salePercentage }}% off </em>
@@ -8,7 +8,7 @@
       <em>R$ {{ sale }}</em> <del>R$ {{ price }}</del>
     </span>
     <span class="c-product-card__price" v-else> R$ {{ price }} </span>
-  </a>
+  </div>
 </template>
 
 <script setup>
@@ -51,25 +51,28 @@ function discountCalculator(sale, price) {
 </script>
 
 <style scoped lang="scss">
-$layout-breakpoint-desktop: 1024px;
+$layout-breakpoint-desktop: 1279px;
 
 .c-product-card {
-  display: block;
+  width: 100%;
   position: relative;
-  width: 163px;
-  height: 163px;
+  max-width: 163px;
+  max-height: 163px;
 
   &__image {
     width: 100%;
+    height: 100%;
+    max-width: 163px;
+    max-height: 163px;
   }
 
   &__percentage {
     position: absolute;
+    right: 2px;
+    top: 2px;
     padding: 6px 5px 4px 5px;
     border-radius: 2px;
     background-color: var(--color-highlight);
-    right: 2px;
-    top: 2px;
 
     em {
       color: var(--color-white);
@@ -82,19 +85,19 @@ $layout-breakpoint-desktop: 1024px;
 
   &__price {
     position: absolute;
+    left: 2px;
+    bottom: 2px;
     width: max-content;
     padding: 6px 5px 4px 5px;
     border-radius: 2px;
     background-color: var(--color-white);
-    left: 2px;
-    bottom: 2px;
+    color: var(--color-gray-5);
 
     font-size: 12px;
     font-weight: var(--font-weight-semi-bold);
     font-family: var(--font-family);
     line-height: 12px;
 
-    color: var(--color-gray-5);
     em {
       color: var(--color-highlight);
       font-style: normal;
@@ -107,8 +110,13 @@ $layout-breakpoint-desktop: 1024px;
   }
 
   @media (min-width: $layout-breakpoint-desktop) {
-    width: 216px;
-    height: 216px;
+    max-width: 216px;
+    max-height: 216px;
+
+    &__image {
+      max-width: 216px;
+      max-height: 216px;
+    }
   }
 }
 </style>

@@ -1,10 +1,14 @@
 <template lang="">
   <div class="c-header">
     <a href="https://www.enjoei.com.br/">
-      <img class="c-header__logo" src="../assets/enjoei-logo.svg" />
+      <Logo class="c-header__logo"/>
     </a>
   </div>
 </template>
+
+<script setup>
+import Logo from "../assets/enjoei-logo.svg";
+</script>
 
 <style lang="scss">
 $layout-breakpoint-desktop: 1024px;
