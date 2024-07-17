@@ -1,14 +1,9 @@
 <template>
   <div id="app">
-    <vHeader/>
-    <vSearchBar/>
     <RouterView />
   </div>
 </template>
-<script setup>
-import vHeader from "@/components/header.vue";
-import vSearchBar from "@/components/search-bar.vue";
-</script>
+
 <style lang="scss">
   @font-face {
     font-family: 'Proxima Nova';
