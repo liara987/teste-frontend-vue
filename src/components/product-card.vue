@@ -44,7 +44,7 @@ const imageUrl = computed(() =>
 const href = computed(() => `https://www.enjoei.com.br/p/${props.path}`);
 const salePercentage = discountCalculator(props.sale, props.price);
 
-function discountCalculator(sale, price) {
+function discountCalculator(sale, price){
   const discount = price - sale;
   return computed(() => Math.round((discount / price) * 100));
 }
@@ -64,6 +64,7 @@ $layout-breakpoint-desktop: 1279px;
     height: 100%;
     max-width: 163px;
     max-height: 163px;
+    border-radius: 3px;
   }
 
   &__percentage {
@@ -116,6 +117,7 @@ $layout-breakpoint-desktop: 1279px;
     &__image {
       max-width: 216px;
       max-height: 216px;
+      border-radius: 2px;
     }
   }
 }

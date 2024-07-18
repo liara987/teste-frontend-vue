@@ -7,6 +7,7 @@
     ></div>
   </div>
 </template>
+
 <script setup>
 import { ref, computed, onBeforeMount } from "vue";
 
@@ -18,10 +19,11 @@ function isDesktop() {
 
 onBeforeMount(() => {
   totalItems.value = computed(() => {
-    return isDesktop ? 28 : 6;
+    return isDesktop() ? 28 : 6;
   });
 });
 </script>
+
 <style lang="scss">
 .c-loading {
   $layout-breakpoint-tablet: 728px;

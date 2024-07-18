@@ -1,8 +1,12 @@
 <template>
+  <vHeader />
+  <vSearchBar />
   <div class="l-container">
     <h1 class="l-title">ué, não encontramos nadinha</h1>
     <h2 class="l-subtitle">que tal recomeçar do começo?</h2>
-    <vClearSearch url="/busca" />
+    <router-link to="/busca">
+      <vClearSearch />
+    </router-link>
     <figure class="l-figure">
       <BlankSlate class="l-svg" />
     </figure>
@@ -12,6 +16,8 @@
 <script setup>
 import BlankSlate from "../assets/blank-slate.svg";
 import vClearSearch from "@/components/clear-search.vue";
+import vHeader from "@/components/header.vue";
+import vSearchBar from "@/components/search-bar.vue";
 </script>
 
 <style scoped lang="scss">

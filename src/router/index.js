@@ -1,28 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import vInstructions from '@/pages/instructions.vue'
 import vSearch from '@/pages/search.vue'
 import vProductNotFound from '@/pages/product-not-found.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Instructions',
-    component: vInstructions
+    name: 'Home',
+    redirect: to => {
+      return 'busca'
+    },
   },
   {
     path: '/busca',
     name: 'Search',
     component: vSearch,
     meta: {
-      seoTitle: 'Instruções'
+      seoTitle: 'Busca de produtos'
     }
   },
   {
-    path: '/not-found',
+    path: '/produto-nao-encontrado',
     name: 'ProductNotFound',
     component: vProductNotFound,
     meta: {
-      seoTitle: 'Instruções'
+      seoTitle: 'Produto não encontrado'
     }
   },
 ]

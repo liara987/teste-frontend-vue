@@ -1,29 +1,49 @@
 <template lang="">
   <div>
-    <router-link :to="props.url">
-      <button class="l-clear-search">limpar busca</button>
-    </router-link>
+    <button
+      @click="clearField()"
+      :class="props.transparent ? 'c-clear__transparent' : 'c-clear'"
+    >
+      limpar busca
+    </button>
   </div>
 </template>
+
 <script setup>
+const searchText = defineModel();
 const props = defineProps({
-  url: {
-    type: String,
-    required: true,
-  }
+  transparent: {
+    type: Boolean,
+    required: false,
+    default: () => false,
+  },
 });
+
+function clearField() {
+  searchText.value = "";
+}
 </script>
+
 <style lang="scss">
-  .l-clear-search {
-    width: 140px;
-    height: 48px;
-    background-color: var(--color-highlight);
-    font-family: var(--font-family);
-    color: var(--color-white);
-    font-size: 16px;
-    line-height: 18.75px;
+.c-clear {
+  width: 140px;
+  height: 48px;
+  background-color: var(--color-highlight);
+  font-family: var(--font-family);
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 18.75px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 60px;
+
+  &__transparent {
+    color: var(--color-highlight);
+    background: transparent;
     border: none;
-    border-radius: 3px;
-    margin-bottom: 60px;
+    padding: 0 0 0 10px;
+    width: max-content;
+    text-align: center;
   }
+}
 </style>

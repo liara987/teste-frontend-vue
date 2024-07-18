@@ -47,12 +47,12 @@ $ yarn test
 - [x] Loading
 - [x] Pagination
 - SearchBar
-  - [ ] Deve pegar oque o foi digitado
-  - [ ] Quando começar a digitar mostrar botão outlined de limpar campo
-  - [ ] Quand apertar no enter ou clickar no icone de lupa fazer a requisição na API
-  - [ ] Quando fazer a requisição mostrar quantos itens foram encontrados
-  - [ ] Se nenhum item for encontrado redirecionar para pagina de not found
-  - [ ] Quando clickar em limpar busca voltar para home
+  - [x] Deve pegar oque o foi digitado
+  - [x] Quando começar a digitar mostrar botão outlined de limpar campo
+  - [x] Quando digitar filtrar os produtos pelo que foi digitado
+  - [ ] Mostrar quantos itens foram encontrados
+  - [ ] Se nenhum item for encontrado redirecionar para pagina de produto não encontrado
+  - [x] Quando clickar em limpar busca voltar para home
 
 ### Páginas
 
