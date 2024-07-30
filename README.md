@@ -1,4 +1,4 @@
-# Teste Front end - Enjoei
+# Teste Front end
 
 ## Instalando pacotes
 
