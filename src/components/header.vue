@@ -1,9 +1,9 @@
 <template lang="">
-  <div class="c-header">
+  <nav class="c-header">
     <a href="https://www.enjoei.com.br/">
       <Logo class="c-header__logo" />
     </a>
-  </div>
+  </nav>
 </template>
 
 <script setup>

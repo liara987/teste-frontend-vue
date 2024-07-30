@@ -1,36 +1,33 @@
 <template>
-  <div :class="[
-    'c-container',
-    { '-with-gutter': gutter }
-  ]">
+  <div :class="['c-container', { '-with-gutter': gutter }]">
     <slot />
   </div>
 </template>
 
 <script setup>
-  defineProps({
-    gutter: {
-      type: Boolean,
-      default: true
-    }
-  })
+defineProps({
+  gutter: {
+    type: Boolean,
+    default: true,
+  },
+});
 </script>
 
 <style scoped lang="scss">
-  .c-container {
-    max-width: 1176px;
-    margin-left: auto;
-    margin-right: auto;
+.c-container {
+  max-width: 1176px;
+  margin-left: auto;
+  margin-right: auto;
 
-    &.-with-gutter {
-      max-width: 1224px;
-      padding-left: 20px;
-      padding-right: 20px;
+  &.-with-gutter {
+    max-width: 1224px;
+    padding-left: 20px;
+    padding-right: 20px;
 
-      @media (min-width: 900px) {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
+    @media (min-width: 900px) {
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
+}
 </style>

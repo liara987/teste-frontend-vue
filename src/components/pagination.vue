@@ -14,6 +14,7 @@ import LeftArrow from "../assets/arrow-left-icon.svg";
 import RightArrow from "../assets/arrow-right-icon.svg";
 
 const page = defineModel();
+
 function next() {
   page.value++;
 }

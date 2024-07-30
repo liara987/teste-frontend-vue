@@ -32,6 +32,8 @@ onBeforeMount(() => {
   display: grid;
   grid-template-columns: repeat(2, 163px);
   justify-content: center;
+  margin-top: 20px;
+  width: fit-content;
   gap: 10px;
 
   &__item {

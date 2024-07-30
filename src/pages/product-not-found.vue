@@ -1,7 +1,7 @@
 <template>
   <vHeader />
-  <vSearchBar />
   <div class="l-container">
+    <vSearchBar />
     <h1 class="l-title">ué, não encontramos nadinha</h1>
     <h2 class="l-subtitle">que tal recomeçar do começo?</h2>
     <router-link to="/busca">
@@ -55,7 +55,7 @@ $layout-breakpoint-tablet: 728px;
     display: flex;
     justify-content: left;
     width: 100vw;
-    margin: 0;
+    margin: 60px;
     position: relative;
     .l-svg {
       position: absolute;
@@ -67,6 +67,7 @@ $layout-breakpoint-tablet: 728px;
     align-items: center;
     padding: 0 52px;
     .l-figure {
+      margin: 80px;
       justify-content: center;
 
       .l-svg {

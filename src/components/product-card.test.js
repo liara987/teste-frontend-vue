@@ -1,14 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
-import vProductCard from '@/components/product-card.vue'
+import { shallowMount } from "@vue/test-utils";
+import vProductCard from "@/components/product-card.vue";
 
-describe('ProductCard', () => {
-  it('mounts', () => {
-    const wrapper = shallowMount(vProductCard, { propsData: {
-      imageId: '',
-      title: '',
-      path: ''
-    }})
+describe("Componente: ProductCard", () => {
+  it("mounts", () => {
+    const wrapper = shallowMount(vProductCard, {
+      propsData: {
+        imageId: "",
+        title: "",
+      },
+    });
 
-    expect(wrapper.vm).toBeTruthy()
-  })
-})
+    expect(wrapper.vm).toBeTruthy();
+  });
+});

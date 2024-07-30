@@ -1,22 +1,22 @@
-import { shallowMount } from '@vue/test-utils'
-import vContainer from '@/components/container.vue'
+import { shallowMount } from "@vue/test-utils";
+import vContainer from "@/components/container.vue";
 
-describe('Container', () => {
-  it('mounts', () => {
-    const wrapper = shallowMount(vContainer)
-    expect(wrapper.vm).toBeTruthy()
-  })
+describe("Componente: Container", () => {
+  it("mounts", () => {
+    const wrapper = shallowMount(vContainer);
+    expect(wrapper.vm).toBeTruthy();
+  });
 
-  it('toggle class according to prop gutter', () => {
-    const withGutterClass = '-with-gutter'
+  it("toggle class according to prop gutter", () => {
+    const withGutterClass = "-with-gutter";
 
-    let wrapper = shallowMount(vContainer)
-    expect(wrapper.classes()).toContain(withGutterClass)
+    let wrapper = shallowMount(vContainer);
+    expect(wrapper.classes()).toContain(withGutterClass);
 
-    wrapper = shallowMount(vContainer, { propsData: { gutter: false }})
-    expect(wrapper.classes()).not.toContain(withGutterClass)
+    wrapper = shallowMount(vContainer, { propsData: { gutter: false } });
+    expect(wrapper.classes()).not.toContain(withGutterClass);
 
-    wrapper = shallowMount(vContainer, { propsData: { gutter: true }})
-    expect(wrapper.classes()).toContain(withGutterClass)
-  })
-})
+    wrapper = shallowMount(vContainer, { propsData: { gutter: true } });
+    expect(wrapper.classes()).toContain(withGutterClass);
+  });
+});

@@ -1,8 +1,8 @@
 <template>
   <div>
     <vHeader />
-    <vSearchBar v-model="searchText" />
     <vContainer :gutter="true">
+      <vSearchBar v-model="searchText" />
       <section class="loading" v-if="loading">
         <vLoading />
       </section>
@@ -19,7 +19,6 @@
                 :price="product.price.listed"
                 :sale="product.price.sale"
                 :title="product.title"
-                path=""
               />
             </a>
           </li>

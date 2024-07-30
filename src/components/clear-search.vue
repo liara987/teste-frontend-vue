@@ -1,23 +1,20 @@
 <template lang="">
-  <div>
-    <button
-      @click="clearField()"
-      :class="props.transparent ? 'c-clear__transparent' : 'c-clear'"
-    >
-      limpar busca
-    </button>
-  </div>
+  <button
+    @click="clearField()"
+    :class="['c-clear', { '-transparent': transparent }]"
+  >
+    limpar busca
+  </button>
 </template>
 
 <script setup>
-const searchText = defineModel();
-const props = defineProps({
+defineProps({
   transparent: {
     type: Boolean,
-    required: false,
-    default: () => false,
+    default: false,
   },
 });
+const searchText = defineModel();
 
 function clearField() {
   searchText.value = "";
@@ -35,9 +32,8 @@ function clearField() {
   line-height: 18.75px;
   border: none;
   border-radius: 3px;
-  margin-bottom: 60px;
 
-  &__transparent {
+  &.-transparent {
     color: var(--color-highlight);
     background: transparent;
     border: none;

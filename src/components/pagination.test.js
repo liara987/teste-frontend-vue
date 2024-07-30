@@ -1,9 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
-import vPagination from '@/components/pagination.vue'
+import { shallowMount } from "@vue/test-utils";
+import vPagination from "@/components/pagination.vue";
 
-describe('Pagination', () => {
-  it('mounts', () => {
-    const wrapper = shallowMount(vPagination)
-    expect(wrapper.vm).toBeTruthy()
-  })
-})
+describe("Componente: Pagination", () => {
+  it("mounts", () => {
+    const wrapper = shallowMount(vPagination);
+    expect(wrapper.vm).toBeTruthy();
+  });
+});

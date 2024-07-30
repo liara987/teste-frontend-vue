@@ -1,5 +1,5 @@
 <template>
-  <div class="c-product-card" :href="href">
+  <div class="c-product-card">
     <img class="c-product-card__image" :src="imageUrl" />
     <span class="c-product-card__percentage" v-if="sale">
       <em> {{ salePercentage }}% off </em>
@@ -24,10 +24,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  path: {
-    type: String,
-    required: true,
-  },
   price: {
     type: Number,
     required: true,
@@ -41,10 +37,9 @@ const props = defineProps({
 const imageUrl = computed(() =>
   getImageUrl(props.imageId, IMAGE_PRESETS.product.card)
 );
-const href = computed(() => `https://www.enjoei.com.br/p/${props.path}`);
 const salePercentage = discountCalculator(props.sale, props.price);
 
-function discountCalculator(sale, price){
+function discountCalculator(sale, price) {
   const discount = price - sale;
   return computed(() => Math.round((discount / price) * 100));
 }
@@ -56,14 +51,10 @@ $layout-breakpoint-desktop: 1279px;
 .c-product-card {
   width: 100%;
   position: relative;
-  max-width: 163px;
-  max-height: 163px;
 
   &__image {
     width: 100%;
     height: 100%;
-    max-width: 163px;
-    max-height: 163px;
     border-radius: 3px;
   }
 
@@ -111,12 +102,7 @@ $layout-breakpoint-desktop: 1279px;
   }
 
   @media (min-width: $layout-breakpoint-desktop) {
-    max-width: 216px;
-    max-height: 216px;
-
     &__image {
-      max-width: 216px;
-      max-height: 216px;
       border-radius: 2px;
     }
   }

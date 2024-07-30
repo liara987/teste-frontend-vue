@@ -7,11 +7,7 @@
       v-model="searchText"
       class="c-search-bar__input"
     />
-    <vClearSearch
-      v-if="searchText"
-      :transparent="true"
-      v-model="searchText"
-    />
+    <vClearSearch v-if="searchText" :transparent="true" v-model="searchText" />
   </div>
 </template>
 
@@ -50,7 +46,6 @@ $layout-breakpoint-desktop: 1024px;
 .c-search-bar {
   display: flex;
   align-items: center;
-  margin: 0 20px;
 
   &__input {
     position: relative;
@@ -80,7 +75,6 @@ $layout-breakpoint-desktop: 1024px;
   }
 
   @media (min-width: $layout-breakpoint-desktop) {
-    margin: 0 52px 16px;
     justify-content: flex-end;
 
     &__input {

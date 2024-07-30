@@ -1,15 +1,23 @@
-import { shallowMount } from '@vue/test-utils'
-import vSearch from '@/pages/search.vue'
+import { shallowMount } from "@vue/test-utils";
+import vSearch from "@/pages/search.vue";
+import { beforeEach } from "vitest";
 
-global.fetch = vi.fn()
+describe("Page: Search", () => {
+  beforeEach(() => {
+    global.fetch = vi.fn().mockResolvedValue("123");
+  });
 
-describe('Search', () => {
-  it('mounts', () => {
-    const wrapper = shallowMount(vSearch)
-    expect(wrapper.vm).toBeTruthy()
-  })
+  it("mounts", async () => {
+    const wrapper = shallowMount(vSearch);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm).toBeTruthy();
+  });
 
-  it('requests products from the API', () => {
-    expect(fetch).toHaveBeenCalledWith('https://www.enjoei.com.br/api/v5/users/enjoei-pro/products/liked?page=1')
-  })
-})
+  it("requests products from the API", async () => {
+    const wrapper = shallowMount(vSearch);
+    await wrapper.vm.$nextTick();
+    expect(fetch).toHaveBeenCalledWith(
+      "https://www.enjoei.com.br/api/v5/users/enjoei-pro/products/liked?page=1"
+    );
+  });
+});
