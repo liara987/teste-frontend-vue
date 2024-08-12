@@ -1,5 +1,20 @@
 # Teste Front end
 **Figma Template**: https://www.figma.com/design/qqGBhbIymYqLqmAPHfHvDt/Teste-Front-End---Product-List-(Copy)?node-id=0-1&t=Uq7CclcYCdhsyveO-0
+
+## Screenshots
+
+### desktop
+![desktop](./screens/desktop.png)
+
+### search
+![search](./screens/search.png)
+
+### mobile
+![mobile](./screens/mobile.png)
+
+### not found
+![not-found](./screens/not-found.png)
+
 ## Instalando pacotes
 
 ```
@@ -98,6 +113,3 @@ Esses são os testes unitários que identifiquei que seriam importantes de reali
   - [x] Mostrar quantos itens foram encontrados
   - [x] Se nenhum item for encontrado redirecionar para pagina de produto não encontrado
   - [x] Quando clickar em limpar busca voltar para home
-
-### Testes unitários
-
