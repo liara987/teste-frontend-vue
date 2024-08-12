@@ -46,15 +46,15 @@ function discountCalculator(sale, price) {
 </script>
 
 <style scoped lang="scss">
-$layout-breakpoint-desktop: 1279px;
+$layout-breakpoint-mobile: 375px;
 
 .c-product-card {
   width: 100%;
   position: relative;
 
   &__image {
-    width: 100%;
-    height: 100%;
+    width: 180px;
+    height: 180px;
     border-radius: 3px;
   }
 
@@ -101,9 +101,11 @@ $layout-breakpoint-desktop: 1279px;
     }
   }
 
-  @media (min-width: $layout-breakpoint-desktop) {
+  @media (min-width: $layout-breakpoint-mobile) {
     &__image {
       border-radius: 2px;
+      width: 216px;
+      height: 216px;
     }
   }
 }
